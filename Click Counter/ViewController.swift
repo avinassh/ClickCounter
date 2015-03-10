@@ -24,6 +24,14 @@ class ViewController: UIViewController {
         label.text = "\(count)"
     }
     
+    func toggleBackground() {
+        if view.backgroundColor == UIColor(red: 1, green: 1, blue: 1, alpha: 1) {
+            view.backgroundColor = UIColor.grayColor()
+        } else {
+            view.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -53,6 +61,16 @@ class ViewController: UIViewController {
         view.addSubview(decButton)
         
         decButton.addTarget(self, action: "decrementCount", forControlEvents: .TouchUpInside)
+        
+        // adds a button which toggles the background
+        
+        var toggleBgButton = UIButton()
+        toggleBgButton.frame = CGRectMake(150, 450, 180, 60)
+        toggleBgButton.setTitle("Toggle Background", forState: .Normal)
+        toggleBgButton.setTitleColor(UIColor.blueColor(), forState: .Normal)
+        view.addSubview(toggleBgButton)
+        
+        toggleBgButton.addTarget(self, action: "toggleBackground", forControlEvents: .TouchUpInside)
     }
 
     override func didReceiveMemoryWarning() {
