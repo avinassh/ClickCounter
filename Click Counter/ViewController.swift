@@ -37,7 +37,7 @@ class ViewController: UIViewController {
         
         // adds a increment button
         var incButton = UIButton()
-        incButton.frame = CGRectMake(150, 250, 60, 60)
+        incButton.frame = CGRectMake(150, 250, 120, 60)
         incButton.setTitle("Increment", forState: .Normal)
         incButton.setTitleColor(UIColor.blueColor(), forState: .Normal)
         view.addSubview(incButton)
@@ -47,7 +47,7 @@ class ViewController: UIViewController {
         // adds a decrement button
         
         var decButton = UIButton()
-        decButton.frame = CGRectMake(150, 350, 60, 60)
+        decButton.frame = CGRectMake(150, 350, 120, 60)
         decButton.setTitle("Decrement", forState: .Normal)
         decButton.setTitleColor(UIColor.blueColor(), forState: .Normal)
         view.addSubview(decButton)
