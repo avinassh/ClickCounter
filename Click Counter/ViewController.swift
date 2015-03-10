@@ -19,6 +19,11 @@ class ViewController: UIViewController {
         label.text = "\(count)"
     }
     
+    func decrementCount() {
+        count--
+        label.text = "\(count)"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -30,14 +35,24 @@ class ViewController: UIViewController {
         view.addSubview(label)
         self.label = label
         
-        // adds a button
-        var button = UIButton()
-        button.frame = CGRectMake(150, 250, 60, 60)
-        button.setTitle("Click", forState: .Normal)
-        button.setTitleColor(UIColor.blueColor(), forState: .Normal)
-        view.addSubview(button)
+        // adds a increment button
+        var incButton = UIButton()
+        incButton.frame = CGRectMake(150, 250, 60, 60)
+        incButton.setTitle("Increment", forState: .Normal)
+        incButton.setTitleColor(UIColor.blueColor(), forState: .Normal)
+        view.addSubview(incButton)
         
-        button.addTarget(self, action: "incrementCount", forControlEvents: .TouchUpInside)
+        incButton.addTarget(self, action: "incrementCount", forControlEvents: .TouchUpInside)
+        
+        // adds a decrement button
+        
+        var decButton = UIButton()
+        decButton.frame = CGRectMake(150, 350, 60, 60)
+        decButton.setTitle("Decrement", forState: .Normal)
+        decButton.setTitleColor(UIColor.blueColor(), forState: .Normal)
+        view.addSubview(decButton)
+        
+        decButton.addTarget(self, action: "decrementCount", forControlEvents: .TouchUpInside)
     }
 
     override func didReceiveMemoryWarning() {
